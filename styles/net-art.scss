@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400&display=swap');
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: lightblue;
+}
+
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('https://wallpapercave.com/wp/wp4566762.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 45678;
+}
+
+header{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: end;
+    top: 0;
+    right: 0;
+    margin: 1%;
+}
+
+header p {
+    margin: 0;
+    padding: 0;
+    font-size: 2vw;
+    color: #89CFF0;
+    -webkit-text-stroke: 1px black; // Black stroke
+    text-shadow: 2px 2px 2px pink; // Baby blue shadow
+    text-align: right;
+}
+
+#droplet {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+input {
+    display: flex;
+    margin: 0 auto;
+    align-items:center;
+    font-size: 3vw;
+
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgb(234, 9, 234); // Shadow
+    background: linear-gradient(45deg, #f3ec78, #f262da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    opacity: 0; // Make the button initially invisible
+    animation: fall 2s ease-out 5s forwards;
+}
+
+input:hover {
+    text-shadow: 2px 2px 4px purple; // Shadow
+    background: linear-gradient(45deg, #f3ec78, #f262da);
+}
+
+input::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateZ(0);
+    background-size: 200%;
+    animation: glitter 1.5s infinite linear;
+}
+
+@keyframes glitter {
+    0% { background-position: -200% -200%; }
+    100% { background-position: 200% 200%; }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0; // The button starts invisible
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1; // The button becomes visible as it falls
+    }
+}
+
+.hint{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 1%;
+}
+
+.hint *{
+    font-size: 1.5vw;
+}
+
+.hints{
+    display: none;
+}
+
+.highlight{
+    background-color: #f262da;
+}
+
+.hints-btn{
+    font-size: inherit;
+    cursor: pointer;
+}
+
+details{
+    cursor: pointer;
+}
+
+details p,
+details ul{
+    cursor: text;
+}
+
+.website{
+    color: blue;
+}
+
+.interviews-nav{
+    position: fixed;
+    display: inline-flex;
+    top: 0;
+    left: 0;
+    margin: 1%;
+    z-index: 1;
+}
+
+.interviews-nav input{
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.interviews-nav input:hover{
+    color: #f262da;
+}
+
+.interview{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3% 37% 0 1.5%;
+    padding-bottom: 10%;
+    z-index: 0;
+}
+
+img{
+    width: 100%;
+}
