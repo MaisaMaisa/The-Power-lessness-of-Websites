@@ -164,3 +164,12 @@ details ul{
 img{
     width: 100%;
 }
+
+.three-images{
+    display: flex;
+}
+
+.three-images img{
+    height: 500px;
+    margin-right: 1%;
+}
