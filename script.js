@@ -40,3 +40,24 @@ window.onload = function() {
       input.className = randomClass;
   });
 };
+
+window.onload = function() {
+  var parent = document.querySelector('.highlights');
+  var highlights = Array.from(parent.getElementsByClassName('highlight'));
+
+  // Shuffle array
+  for (let i = highlights.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [highlights[i], highlights[j]] = [highlights[j], highlights[i]];
+  }
+
+  // Remove all existing highlight elements
+  while (parent.firstChild) {
+      parent.firstChild.remove();
+  }
+
+  // Append shuffled highlights
+  highlights.forEach(highlight => {
+      parent.appendChild(highlight.parentNode); // append the parent of highlight which is the <p> tag
+  });
+};

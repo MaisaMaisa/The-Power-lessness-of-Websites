@@ -98,8 +98,13 @@ input {
   display: none;
 }
 
+.highlights {
+  margin-right: 1%;
+}
+
 .highlight {
   background-color: #f262da;
+  color: white;
 }
 
 .hints-btn {
